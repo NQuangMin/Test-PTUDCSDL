@@ -183,10 +183,8 @@ namespace Test_PTUDCSDL
             }
             catch
             {
-                MessageBox.Show("Lỗi", "Thông báo");//this is a new comment
-
+                MessageBox.Show("Lỗi", "Thông báo");/////
             }
-            //this is a comment
         }
     }
 }
