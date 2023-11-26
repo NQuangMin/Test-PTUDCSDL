@@ -183,9 +183,8 @@ namespace Test_PTUDCSDL
             }
             catch
             {
-                MessageBox.Show("Lỗi", "Thông báo");
+                MessageBox.Show("Lỗi", "Thông báo");//hello
             }
-            // hello
         }
     }
 }
