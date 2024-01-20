@@ -94,7 +94,7 @@ namespace Test_PTUDCSDL
             {
                 Dictionary<string, object> parameters = new Dictionary<string, object>();
                 parameters.Add("@MaHangHoa", int.Parse(textBox1.Text));
-                Database.Execute("delete from HangHoa where MaHangHoa=" + "@MaHangHoa", parameters);
+                Database.Execute("delete from HangHoa where MaHangHoa=@MaHangHoa", parameters);
                 Loaddatagridview();
             }
             catch

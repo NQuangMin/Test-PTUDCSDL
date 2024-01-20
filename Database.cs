@@ -18,8 +18,18 @@ namespace Test_PTUDCSDL
             if (parameters != null) {
                 foreach(string key in parameters.Keys) command.Parameters.Add(new SqlParameter(key, parameters[key]));
             }
-            command.ExecuteNonQuery();
-            connection.Close();
+            try
+            { 
+                command.ExecuteNonQuery(); 
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            { 
+                connection.Close();
+            }
         }
 
         public static DataTable Query(string cmd, Dictionary<String, object> parameters = null)
@@ -32,8 +42,18 @@ namespace Test_PTUDCSDL
             {
                 foreach (string key in parameters.Keys) command.Parameters.Add(new SqlParameter(key, parameters[key]));
             }
-            adapter.Fill(table);
-            connection.Close();
+            try
+            {
+                adapter.Fill(table);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
             return table;
         }
     }
